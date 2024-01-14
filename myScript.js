@@ -1,61 +1,80 @@
 <script>
-//地牢按钮
-		window.onload = function () {
-            const form = document.querySelector('#commandForm');
-            const buttonsContainer = document.querySelector('#buttons');
+function giveSlotItems(blueprintPath) {
+    var numItems = prompt("输入数量");
+    if (numItems != null) {
+        var numTimes = parseInt(prompt("输入格子数量"));
+        if (isNaN(numTimes)) {
+            alert("请输入有效数字");
+            return;
+        }
 
-            // 加载已保存的按钮数据
-            const savedButtons = JSON.parse(localStorage.getItem('savedButtons')) || [];
+        for (var i = 0; i < numTimes; i++) {
+            h5gg.CommandQueue('admincheat giveslotitem "' + blueprintPath + '" 1 ' + numItems);
+        }
+    }
+}
 
-            // 创建和渲染已保存的按钮
-            savedButtons.forEach(savedButton => {
-                createButton(savedButton);
-            });
+function a31() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_01.PrimalItemArtifact_01_C\'');
+}
 
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
+function a32() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_02.PrimalItemArtifact_02_C\'');
+}
 
-                // 获取按钮名称和参数
-                const buttonName = document.querySelector('#button-name').value;
-                const param1 = document.querySelector('#param1').value;
-                const param2 = document.querySelector('#param2').value;
+function a33() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_03.PrimalItemArtifact_03_C\'');
+}
 
-                // 创建按钮并保存
-                const newButton = createButton({ name: buttonName, param1, param2 });
-                savedButtons.push(newButton);
-                localStorage.setItem('savedButtons', JSON.stringify(savedButtons));
-            });
+function a34() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_04.PrimalItemArtifact_04_C\'');
+}
 
-            function createButton(buttonData) {
-                // 创建按钮
-                const button = document.createElement('button');
-                button.textContent = buttonData.name;
+function a35() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_05.PrimalItemArtifact_05_C\'');
+}
 
-                // 为按钮添加点击事件监听器
-                button.addEventListener('click', function () {
-                    // 执行命令
-                    h5gg.CommandQueue('cheat SetPlayerPos ' + buttonData.param1 + ' ' + buttonData.param2);
-                });
+function a36() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_06.PrimalItemArtifact_06_C\'');
+}
 
-                // 创建删除按钮
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = '删除';
-                deleteButton.addEventListener('click', function () {
-                    // 删除按钮并保存
-                    const index = savedButtons.findIndex(savedButton => savedButton.name === buttonData.name);
-                    if (index !== -1) {
-                        savedButtons.splice(index, 1);
-                        localStorage.setItem('savedButtons', JSON.stringify(savedButtons));
-                    }
-                    buttonsContainer.removeChild(button);
-                    buttonsContainer.removeChild(deleteButton);
-                });
+function a37() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_07.PrimalItemArtifact_07_C\'');
+}
 
-                // 将按钮和删除按钮添加到容器中
-                buttonsContainer.appendChild(button);
-                buttonsContainer.appendChild(deleteButton);
+function a38() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_08.PrimalItemArtifact_08_C\'');
+}
 
-                return buttonData;
-            }
-        };
+function a39() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_09.PrimalItemArtifact_09_C\'');
+}
+
+function BB1() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/PrimalItem_MatureBoost_Toy_Yoyo.PrimalItem_MatureBoost_Toy_Yoyo_C\'');
+}
+
+function BB3() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/PrimalItem_MatureBoost_Toy_Yoyo.PrimalItem_MatureBoost_Toy_Yoyo_C\'');
+}
+
+function BB4() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_PotentHealSoup.PrimalItemConsumable_PotentHealSoup_C\'');
+}
+
+function BB5() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_DungeonSalve_Healing.PrimalItemConsumable_DungeonSalve_Healing_C\'');
+}
+
+function BB6() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Collars/PrimalItemArmor_GoldenChain.PrimalItemArmor_GoldenChain_C\'');
+}
+
+function BB7() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_EeryElement.PrimalItemResource_EeryElement_C\'');
+}
+
+function BB8() {
+    giveSlotItems('Blueprint\'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_DinoAmber.PrimalItemResource_DinoAmber_C\'');
+}
 </script>
